@@ -1,0 +1,20 @@
+<div class="container">
+<h2>Books</h2>
+
+ <div class="row">
+     <table>
+       <tr>
+         <th>Title</th>
+         <th>Opinion</th>
+       </tr>
+
+       <tr>
+        <td><% @books.each do |book|%></td>
+        <td><%= book.title %></td>
+        <td><%= book.body %></td>
+
+        </tr>
+     </table>
+  </div>
+
+</div>

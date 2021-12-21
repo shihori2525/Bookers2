@@ -1,20 +1,29 @@
-<h1>welcome to Bookers !!</h1>
-
 <body>
 
-  <main>
-  <p>
-   In Bookers,<br>
-   you can share and exchange your opinions , inpressions , and emotions<br>
-   about various books!
-  </p>
-    <li>
-      <%= link_to "Log in", new_user_session_path %>
-    </li>
-    <li>
-      <%= link_to "Sign up", new_user_registration_path %>
-    </li>
+  <div class="container">
+    <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
 
-    </main>
+      <div class="row">
+      <h1>welcome to<%= fa_icon("book") %>Bookers !!</h1>
+      </div>
+      <div class="row mb-1em">
+       <p>In Bookers,</p>
+      </div>
+      <div class="row mb-1em">
+       <p>you can share and exchange your opinions , inpressions , and emotions</p>
+      </div>
+      <div class="row mb-1em">
+       <p>about various books!</p>
+      </div>
+  </div>
 
-</body>
+
+<div class="btn-wrapper col-10 mx-auto">
+   <div class="row">
+    <button class="btn btn-info btn-sm btn-block mb-3" type="button"><%= link_to "Log in", new_user_session_path,class:'nav-link text-light' %></button>
+   </div>
+
+  <div class="row">
+    <button class="btn btn-success btn-sm btn-block" type="button"><%= link_to "Sign up", new_user_registration_path,class:'nav-link text-light' %></button>
+  </div>
+</div>
