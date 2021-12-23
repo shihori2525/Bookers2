@@ -1,13 +1,17 @@
 <div class="container">
-  <%= render 'users/list', user:@user,book:@book %>
   <div class"row">
+    <%= render 'users/list', user:@user,book:@book %>
+    <div class="col-md-8 offset-md-1">
+    <h2>Book detail</h2>
     <tbody>
      <tr>
-      <td> <%= attachment_image_tag @user, :profile_image_id, format: 'jpeg', fallback: "no_image.jpg", size: "40x40" %></td>
-      <% @books.each do |book|%>
-      <td><%= book.title %></td>
-      <td><%= book.body %></td>
-      <% end %>
+        <td><%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "63x63" %></td>
+        <% @books.each do |book|%>
+        <td><%= book.title %></td>
+        <td><%= book.body %></td>
+        <% end %>
+      </tr>
+
       <td>
         <% if @book.user == current_user %>
         <%= link_to "Edit",edit_book_path(@book.id)%>
@@ -16,24 +20,14 @@
       <td>|</td>
 
       <td>
-      <% if @book.user == current_user %>
-      <%= link_to "Destroy", book_path(@book.id), method: :delete,"data-confirm" => "本当に消しますか" %>
-      <% end %>
+        <% if @book.user == current_user %>
+        <%= link_to "Destroy", book_path(@book.id), method: :delete,"data-confirm" => "本当に消しますか" %>
+        <% end %>
       </td>
      </tr>
-
-
-
-   </tbody>
-  </table>
-</div>
-
-
+     </tbody>
+    </table>
 
   </div>
-
-
-
-
-
+ </div>
 </div>
