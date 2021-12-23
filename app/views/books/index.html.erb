@@ -11,12 +11,16 @@
     </thead>
 
    <tbody>
+    <% @books.each do |book|%>
      <tr>
       <td><%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "40x40" %></td>
-      <% @books.each do |book|%>
-       <td><%= book.title %></td>
+      <td>
+        <%= link_to book_path(book.id) do %>
+        <%= book.title %>
+        <% end %>
+       </td>
        <td><%= book.body %></td>
-     </tr>
+      </tr>
       <% end %>
    </tbody>
   </table>

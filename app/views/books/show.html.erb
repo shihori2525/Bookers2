@@ -6,22 +6,20 @@
     <tbody>
      <tr>
         <td><%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "63x63" %></td>
-        <% @books.each do |book|%>
-        <td><%= book.title %></td>
-        <td><%= book.body %></td>
-        <% end %>
+        <td><%= @book.title %></td>
+        <td><%= @book.body %></td>
       </tr>
 
       <td>
         <% if @book.user == current_user %>
-        <%= link_to "Edit",edit_book_path(@book.id)%>
+        <%= link_to 'Edit',edit_book_path(@book.id)%>
         <% end %>
       </td>
       <td>|</td>
 
       <td>
         <% if @book.user == current_user %>
-        <%= link_to "Destroy", book_path(@book.id), method: :delete,"data-confirm" => "本当に消しますか" %>
+        <%= link_to 'Destroy',books_path, method: :delete,"data-confirm" => "本当に消しますか" %>
         <% end %>
       </td>
      </tr>
