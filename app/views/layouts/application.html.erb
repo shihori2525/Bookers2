@@ -59,13 +59,22 @@
     </header>
 
 
+    <div class="flash">
+      <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{notice}") %>
+      <% end %>
+    </div>
+
+
 
 <%= yield %>
 
  <footer>
    <div class="container mt-5">
-     <div class="mx-auto text-center">
+     <div class="row">
+      <div class="mx-auto">
        <p>CopyRight Infratop.inc</p>
+      </div>
      </div>
    </div>
  </footer>
